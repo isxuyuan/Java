@@ -1,4 +1,4 @@
-package fenzhi;
+package com.queryscore;
  
 public class fenzhi {
  

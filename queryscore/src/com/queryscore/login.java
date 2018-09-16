@@ -1,4 +1,4 @@
-package login;
+package com.queryscore;
 
 import javax.swing.JButton;
 
@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 import javax.swing.JTextField;
+
 
 publicclassLoginFrame extends JFrame {
 

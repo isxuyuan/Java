@@ -1,0 +1,28 @@
+package com.queryscore;
+
+import java.awt.*;
+import javax.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
+
+public  class pratice2 implements Runnable {
+	
+	public void run() {
+		JFrame f =new JFrame("Hello ,I'm XuYuan");
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setLayout(new FlowLayout());
+		f.setLocationRelativeTo(null);
+		f.add(new JLabel("hello ,how are you"));
+		f.add(new JButton("Press me"));
+		f.pack();
+		f.setVisible(true);
+	}
+	
+	
+	public static void main(String[] args) {
+		pratice2 pr =new pratice2();
+		SwingUtilities.invokeLater(pr);
+	}
+}
