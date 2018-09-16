@@ -1,0 +1,125 @@
+package login;
+
+import javax.swing.JButton;
+
+import javax.swing.JFrame;
+
+import javax.swing.JLabel;
+
+import javax.swing.JPanel;
+
+import javax.swing.JPasswordField;
+
+import javax.swing.JTextField;
+
+publicclassLoginFrame extends JFrame {
+
+//容器
+
+private JPanel pnlMain;
+
+//标签控件
+
+private JLabellbl Title;
+
+private JLabellbl UserName;
+
+private JLabellbl UserPwd;
+
+//输入用户名的文本框控件
+
+private JTextFieldtxt UserName;
+
+//输入密码的密码框控件
+
+private JPasswordFieldpwd UserPwd;
+
+//登录和退出按钮控件
+
+privateJButtonbtn Login;
+
+privateJButtonbtn Quit;
+
+publicLoginFrame() {
+
+//实例化容器和各种控件
+
+pnlMain=newJPanel(null);
+
+lblTitle=newJLabel("用户登录");
+
+lblUserName=newJLabel("用户姓名：");
+
+lblUserPwd=newJLabel("用户密码：");
+
+txtUserName=newJTextField();
+
+pwdUserPwd=newJPasswordField();
+
+btnLogin=newJButton("登录");
+
+btnQuit=newJButton("退出");
+
+init();
+
+}
+
+/**该方法对窗口做初始化操作*/
+
+privatevoidinit() {
+
+//设置窗口的各个属性
+
+this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+this.setTitle("登录窗口");
+
+this.setSize(300, 220);
+
+this.setResizable(false);
+
+/*设置各个控件的位置和坐标
+
+*   setBounds()的前两个参数为控件的左上角坐标，后两个参数为控件的宽和高
+
+*/
+
+lblTitle.setBounds(100, 10, 100, 30);
+
+lblUserName.setBounds(20, 60, 75, 25);
+
+lblUserPwd.setBounds(20, 100, 75, 25);
+
+txtUserName.setBounds(100, 60, 120, 25);
+
+pwdUserPwd.setBounds(100, 100, 120, 25);
+
+btnLogin.setBounds(50, 140, 75, 25);
+
+btnQuit.setBounds(150, 140, 75, 25);
+
+//将所有控件压在容器上
+
+pnlMain.add(lblTitle);
+
+pnlMain.add(lblUserName);
+
+pnlMain.add(lblUserPwd);
+
+pnlMain.add(txtUserName);
+
+pnlMain.add(pwdUserPwd);
+
+pnlMain.add(btnLogin);
+
+pnlMain.add(btnQuit);
+
+//将容器添加到窗口上
+
+this.add(pnlMain);
+
+this.setVisible(true);
+
+}
+
+}

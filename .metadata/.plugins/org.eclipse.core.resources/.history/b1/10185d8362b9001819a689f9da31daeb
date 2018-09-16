@@ -1,0 +1,209 @@
+package com.queryscore;
+  
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.lang.model.element.NestingKind;
+import javax.management.Query;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+
+public class pratice {
+	
+public static JLabel jlb22;
+
+public static void main(String[] args) {
+	
+
+	
+	JFrame frame = new JFrame();
+	frame.setSize(500,400);
+	frame.setTitle("query score for stuends");
+	frame.setLayout(new GridLayout(4,1));
+	frame.setLocationRelativeTo(null);
+	
+	
+	JPanel panel1 = new JPanel();
+	JPanel panel2 = new JPanel();
+	JPanel panel3 = new JPanel();
+	JPanel panel4 = new JPanel();
+	
+	 //first line
+	JLabel label1 = new JLabel("query score");
+	label1.setFont(new Font("宋体", Font.BOLD , 20));
+	panel1.add(label1);
+	
+	//secend line
+	JLabel jlb1 = new JLabel("Please enter your score");
+	jlb1.setFont(new Font("宋体", Font.BOLD, 20));
+	final JTextField jtf1=new JTextField(4);
+	jtf1.setFont(new Font("宋体", Font.BOLD, 15));
+	panel2.add(jlb1);
+	panel2.add(jtf1);
+	
+	//third line
+	JLabel jlb2 =new JLabel("student grade");
+	jlb2.setFont(new Font("宋体", Font.BOLD, 20));
+	jlb22 =new JLabel("wait");
+	jlb22.setFont(new Font("宋体", Font.BOLD, 20));
+	jlb22.setForeground(Color.red);
+	panel3.add(jlb2);
+	panel3.add(jlb22);
+	
+	
+	//creat button
+	JButton jb1=new JButton("query");
+	JButton jb2=new JButton("cancel");
+	jb1.setFont(new Font("宋体", Font.BOLD, 18));
+	jb2.setFont(new Font("宋体", Font.BOLD, 18));
+	jb1.setFocusPainted(false);
+	jb2.setFocusPainted(false);
+	panel4.add(jb1);
+	panel4.add(jb2);
+	
+	
+	frame.add(panel1);
+	frame.add(panel2);
+	frame.add(panel3);
+	frame.add(panel4);
+	
+	
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+	frame.setResizable(false);
+	
+	
+	//query按钮添加一个活动监听
+	jb1.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			String chengji = jtf1.getText().trim();
+			queryscore(chengji);
+			
+		}
+	});
+
+	
+	//cancel按钮添加一个活动监听
+	jb2.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			jtf1.setText(null);
+			jlb22.setText("wait");
+		}
+	});
+}
+	
+	//判断成绩的函数
+	
+	public static void queryscore(String chengjiStr) {
+	
+		try {
+			double chengji =Double.valueOf(chengjiStr);
+			if(chengji>100) {
+				jlb22.setText("wrong score");
+			}
+			else if (90<=chengji && chengji<=100) {
+				jlb22.setText("优秀 ");
+		    }
+			else if (80<=chengji && chengji<90) {
+				jlb22.setText("良好");
+			}
+			else if (70<=chengji && chengji<80) {
+				jlb22.setText("中等");
+			}
+			else if (60<=chengji && chengji<70) {
+				jlb22.setText("及格");
+			}else {
+				jlb22.setText("不及格");
+			}
+		}
+			catch (NumberFormatException e) {
+				
+				jlb22.setText("wrong");
+				
+			}
+		
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+}

@@ -1,0 +1,5 @@
+package com.queryscore;
+
+public interface chat {
+
+}
